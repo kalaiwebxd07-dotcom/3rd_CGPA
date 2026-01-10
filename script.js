@@ -26,20 +26,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Defaults ---
     // --- Defaults ---
     const DEFAULT_SUBJECTS = [
-        { name: "Discrete Mathematics", credits: 4 },
-        { name: "Data Structures & Algorithms", credits: 3 },
-        { name: "Database Management Systems", credits: 3 },
-        { name: "Object-Oriented Programming", credits: 3 },
-        { name: "Software Engineering", credits: 3 },
-        { name: "Operating Systems", credits: 3 },
-        { name: "DSA Laboratory", credits: 2 },
-        { name: "DBMS Laboratory", credits: 2 },
-        { name: "OS Laboratory", credits: 2 }
+        { name: "Formal Language and Automata Theory", credits: 3 },
+        { name: "Data Warehousing and Data Mining", credits: 3 },
+        { name: "Foundation of Quantum Computing", credits: 3 },
+        { name: "Professional Elective- II", credits: 3 },
+        { name: "Professional Elective- III", credits: 3 },
+        { name: "Open Elective– I (NPTEL)", credits: 3 },
+        { name: "Career Development Skill-II", credits: 1 },
+        { name: "Quantum Computing Laboratory", credits: 1 },
+        { name: "Professional Elective- II Laboratory", credits: 1 },
+        { name: "Professional Elective - III Laboratory", credits: 1 }
     ];
 
-    // Data Migration: Check if old data exists (e.g., "Software Engineering (Theory)") and reset if so
+    // Data Migration: Check if old data exists (e.g., "Discrete Mathematics" or "Software Engineering") and reset if so
     const storedForCheck = localStorage.getItem('subjects');
-    if (storedForCheck && storedForCheck.includes("Software Engineering (Theory)")) {
+    if (storedForCheck && (storedForCheck.includes("Discrete Mathematics") || storedForCheck.includes("Software Engineering (Theory)"))) {
         localStorage.removeItem('subjects');
     }
 
