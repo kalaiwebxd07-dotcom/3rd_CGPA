@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Defaults ---
     // --- Defaults ---
     const DEFAULT_SUBJECTS = [
-        { name: "CAREER DEVELOPMENT SKILL - II", credits: 3 },
+        { name: "CAREER DEVELOPMENT SKILL - II", credits: 1 },
         { name: "INTERNET OF THINGS", credits: 3 },
         { name: "INTERNET OF THINGS LABORATORY", credits: 1 },
         { name: "SALESFORCE CRM AND PLATFORM", credits: 3 },
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Data Migration: Check if old data exists (e.g., "Discrete Mathematics" or "Software Engineering") and reset if so
     const storedForCheck = localStorage.getItem('subjects');
-    if (storedForCheck && (storedForCheck.includes("Discrete Mathematics") || storedForCheck.includes("Software Engineering (Theory)") || storedForCheck.includes("Formal Language and Automata Theory") || storedForCheck.includes("CAREER DEVELOPMENT"))) {
+    if (storedForCheck && (storedForCheck.includes("Discrete Mathematics") || storedForCheck.includes("Software Engineering (Theory)") || storedForCheck.includes("Formal Language and Automata Theory") || storedForCheck.includes("CAREER DEVELOPMENT") || (storedForCheck.includes("CAREER DEVELOPMENT SKILL - II") && storedForCheck.includes('"credits":3')))) {
         localStorage.removeItem('subjects');
     }
 
